@@ -23,6 +23,7 @@ with open(poll_csv) as csv_file:
    # print(f"Header: {csv_header}")
 
     # Read through each row of data after the header
+    # count total
     for row in csv_reader: 
         T=T+1
         if str(row[2]) == "Charles Casper Stockham":
@@ -31,18 +32,18 @@ with open(poll_csv) as csv_file:
             DD = DD+1
         else:
             RAD = RAD+1
-
+# compute percent of vote variables
 zCCS= round((CCS/T)*100,3)
 zDD = round((DD/T)*100,3)
 zRAD = round((RAD/T)*100,3) 
-
+#Determine who won
 def maximum(a,b,c):      
     List = [(CCS), (DD), (RAD)]
     return max(List)
     
 W = (maximum((CCS),(DD),(RAD)))
 
-
+#Print Analysis
 print ("Election Results")
 print ("--------------------------")
 print ("Total Votes: " + str(T))
@@ -59,7 +60,7 @@ else:
      print("Winner: Raymon Anthony Doane")
 print ("--------------------------")
 
-# Specify the file to write to
+# Specify the file to write to Create text file  and write lines
 output_path = os.path.join("..","py_poll","analysis", "new.txt")
 
 f=open (output_path,"w+")

@@ -58,7 +58,7 @@ print("Average Change:  $" + str(round(Avg_Change,2)))
 print("Greatest increase in Profits: " + (HPD) +" ($"+ str(HP) +")")
 print("Greatest Decrease in Profits: " + (LPD) +" ($"+ str(LP) +")")
 
-# Specify the file to write to
+# Specify the file to write to Print lines to new text file
 output_path = os.path.join("..","py_bank","analysis", "new.txt")
 
 f=open (output_path,"w+")
